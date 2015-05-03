@@ -65,7 +65,6 @@ app.get('/cities/:name', function (request, response) {
   }
 });
 
-
 app.get('/cities', function (request, response) {
   response.json(cities);
 });
