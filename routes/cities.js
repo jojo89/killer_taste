@@ -33,8 +33,8 @@ router.route('/')
 
 router.route('/:name')
     .all(function(request, response, next) {
-      request.cityName = parseCityName(request.params.name);
-      next()
+        request.cityName = parseCityName(request.params.name);
+        next()
     })
     .get(function(request, response) {
         var cityInfo = cities[request.cityName];
