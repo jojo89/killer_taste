@@ -1,12 +1,9 @@
 $(function(){
-  
   $('body').on('click', 'a[data-block]', function(event){
-    console.log("a")
     if(!confirm("sure?")){
       return false;
     }
     var target = $(event.currentTarget);
-
     $.ajax({
       type: 'DELETE', url: '/cities/' + target.data('block')
     }).done(function(){
@@ -14,8 +11,7 @@ $(function(){
     })
   })
 
-  $.get('/cities', appendToList ); 
-
+  $.get('/cities', appendToList );
   function appendToList(cities) {
     var list = [];
     for(var i in cities){
